@@ -3,7 +3,10 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import intLOGO from "../../assets/images/interactlogo.SVG";
 import { useDispatch } from "react-redux";
 import { RESET_AUTH, logout } from "../../redux/features/auth/authSlice";
-import ShowOnLogin, { ShowOnLogout } from "../HiddenLink/hiddenLink";
+import ShowOnLogin, {
+  ShowOnAdmin,
+  ShowOnLogout,
+} from "../HiddenLink/hiddenLink";
 import { UserName } from "../../pages/profile/Profile";
 
 const navLink = [
@@ -115,6 +118,16 @@ const Header = () => {
                     data-te-dropdown-item-ref
                   >
                     Profile
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/support"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    data-te-dropdown-item-ref
+                  >
+                    Manage Chat Support
                   </Link>
                 </li>
 

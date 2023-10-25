@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import {
+  assessment_Test,
+  attempts_Number,
+  flagResult,
+} from "../../helper/helper";
 
 // import images
 import resultIMG from "../../assets/images/result.svg";
 import Layout from "../Layout/Layout";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { resetAllAction } from "../../redux/question_reducer";
 import { resetResultAction } from "../../redux/result_reducer";
 
@@ -13,9 +19,60 @@ import { resetResultAction } from "../../redux/result_reducer";
 const Result = () => {
   const dispatch = useDispatch();
 
+  const {
+    questions: { queue, answers },
+    result: { result, userId },
+  } = useSelector((state) => state);
+
+  useEffect(() => {
+    console.log(flag);
+  });
+
+  const attempts = attempts_Number(result);
+  const assess = assessment_Test(result, answers, 10);
+  const flag = flagResult(assess);
+
   function onRestart() {
-    dispatch(resetAllAction());
-    dispatch(resetResultAction());
+    const shouldReset = window.confirm(
+      "Are you sure you want to reset the quiz? Your progress will be lost."
+    );
+
+    if (shouldReset) {
+      dispatch(resetAllAction());
+      dispatch(resetResultAction());
+
+      // Display a toast notification
+      toast.info("Quiz Restarted", {
+        autoClose: 2000,
+      });
+    } else {
+      // Remove the reset actions and related code
+      toast.warning("Reset canceled", {
+        autoClose: 2000,
+      });
+    }
+  }
+
+  // Restart
+  function onRestart() {
+    const shouldReset = window.confirm(
+      "Are you sure you want to reset the quiz? Your progress will be lost."
+    );
+
+    if (shouldReset) {
+      dispatch(resetAllAction());
+      dispatch(resetResultAction());
+
+      // Display a toast notification
+      toast.info("Quiz Restarted", {
+        autoClose: 2000,
+      });
+    } else {
+      // Remove the reset actions and related code for "Cancel" case
+      toast.warning("Reset canceled", {
+        autoClose: 2000,
+      });
+    }
   }
 
   return (
@@ -45,7 +102,7 @@ const Result = () => {
                     </div>
                     <div className="ml-4 flex-col flex-initial flex w-auto items-start gap-2">
                       <h5 className="text-lg opacity-80 font-bold">
-                        Total Questions : 5
+                        Total Questions Answered : {queue.length || 0}
                       </h5>
                     </div>
                   </div>
@@ -62,7 +119,13 @@ const Result = () => {
                     </div>
                     <div className="ml-4 flex-col flex-initial flex w-auto items-start gap-2">
                       <h5 className="text-lg opacity-80 font-bold">
-                        Result : Depressed
+                        <div
+                          className={`result-text ${
+                            flag ? "text-green-500" : "text-red-500"
+                          }`}
+                        >
+                          Result : {flag ? "Healthy" : "Struggling"}
+                        </div>
                       </h5>
                     </div>
                   </div>
@@ -71,12 +134,12 @@ const Result = () => {
                   <Link
                     data-aos="zoom-in"
                     data-aos-duration="1500"
-                    className="relative mb-8 flex w-auto cursor-pointer items-start justify-center rounded-3xl gap-4 border border-solid bg-brightColor text-left align-top hover:bg-softColor text-[#222222] max-[479px]:block px-6 py-5"
+                    className="relative mb-8 mx-6 flex w-auto cursor-pointer items-start justify-center rounded-3xl gap-4 border border-solid bg-brightColor text-left align-top hover:bg-softColor text-[#222222] max-[479px]:block px-6 py-5"
                     onClick={onRestart}
                     to="/question"
                   >
-                    <div className="flex-col flex-none flex h-10 w-10 items-center justify-center rounded-full bg-transparent">
-                      <i className="ri-refresh-line font-bold text-[40px] max-[479px]:text-sm"></i>
+                    <div className="flex-col flex-none flex h-[10px] w-[10px] px-4 items-center justify-center rounded-full bg-transparent">
+                      <i className="ri-refresh-line font-bold text-[25px] max-[479px]:text-sm "></i>
                     </div>
                   </Link>
                 </div>

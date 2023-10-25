@@ -14,13 +14,14 @@ const About = () => {
               <div className="flex flex-col items-start gap-8 lg:gap-[100px]">
                 <div className="flex max-w-[592px] flex-col items-start gap-8 lg:gap-[60px]">
                   <h2 className="font-bold text-3xl md:text-5xl">
-                    What is Interact Me?
+                    About Interact Me
                   </h2>
                   <p className="flex-col text-[#808080] max-[479px]:text-sm">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare, eros dolor interdum nulla,
-                    ut commodo diam libero vitae erat.
+                    Welcome to Interact Me, a place dedicated to promoting
+                    mental health and providing valuable resources to
+                    individuals seeking support. Our team of mental health
+                    experts, clinicians, and psychologists are here to guide you
+                    on your journey toward better mental well-being.
                   </p>
                 </div>
                 <div className="grid place-items-start gap-10 max-[991px]:gap-x-8 max-[767px]:gap-y-12 grid-cols-1 lg:grid-cols-2">
@@ -34,16 +35,11 @@ const About = () => {
                       Our Mission
                     </h2>
                     <p className="flex-col text-[#808080] max-[479px]:text-sm">
-                      Aliquet risus feugiat in ante metus. Arcu dui vivamus arcu
-                      felis bibendum ut. Vestibulum lorem sed risus ultricies
-                      tristique nulla. Vitae et leo duis ut diam quam. Bibendum
-                      arcu vitae elementum curabitur vitae nunc. Dictumst
-                      vestibulum rhoncus est pellentesque. Lectus proin nibh
-                      nisl condimentum id. Ullamcorper dignissim cras tincidunt
-                      lobortis feugiat vivamus. <br />
-                      <br />
-                      Massa id neque aliquam vestibulum morbi blandit. Nulla
-                      pellentesque dignissim enim sit amet venenatis.
+                      At Interact Me, our mission is to raise awareness about
+                      mental health, reduce stigma, and empower individuals to
+                      take control of their emotional and psychological
+                      well-being. We believe that everyone deserves access to
+                      reliable mental health information and resources.
                     </p>
                   </div>
                 </div>

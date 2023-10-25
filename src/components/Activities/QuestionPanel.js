@@ -12,6 +12,7 @@ const QuestionPanel = ({ onChecked }) => {
   const { trace } = useSelector((state) => state.questions);
   const result = useSelector((state) => state.result.result);
   const [{ isLoading, apiData, serverError }] = useFetchQuestion();
+  // useSelector((state) => console.log(state));
   const totalQuestions = questionData.length;
 
   const questions = useSelector(
@@ -20,13 +21,14 @@ const QuestionPanel = ({ onChecked }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log({ trace, checked });
+    // console.log({ trace, checked });
     dispatch(updateResult({ trace, checked }));
   }, [checked]);
 
   function onSelect(i) {
     onChecked(i);
     setChecked(i);
+    dispatch(updateResult({ trace, checked }));
   }
 
   if (isLoading) return <h3 className="text-black">isLoading</h3>;
@@ -84,7 +86,7 @@ const QuestionPanel = ({ onChecked }) => {
                 <label
                   htmlFor={`q${i}-option`}
                   className={`inline-flex items-center justify-between w-full p-5 text-gray-500 bg-bgColor border border-gray-200 rounded-lg cursor-pointer peer-checked:border-veryColor peer-checked:text-brightColor hover:text-gray-600 hover:bg-gray-100 ${
-                    result[trace] == i
+                    result[trace] === i
                       ? " inline-flex items-center justify-between w-full p-5 bg-bgColor text-veryColor border rounded-lg cursor-pointer border-veryColor"
                       : ""
                   }`}

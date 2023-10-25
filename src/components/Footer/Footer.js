@@ -19,7 +19,7 @@ const socialLinks = [
 
 const quickLinks01 = [
   {
-    path: "/home",
+    path: "/",
     display: "Home",
   },
   {
@@ -35,11 +35,7 @@ const quickLinks01 = [
 const quickLinks02 = [
   {
     path: "/checkin",
-    display: "Check-in",
-  },
-  {
-    path: "/checkin",
-    display: "Talk to Professional",
+    display: "Check my mental health",
   },
   {
     path: "/guide",

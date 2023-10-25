@@ -3,6 +3,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import SupportEngine from "../../Chat/SupportEngine";
+import ShowOnLogin from "../HiddenLink/hiddenLink";
 
 // Components
 
@@ -20,6 +22,10 @@ const Layout = ({ children, title, description, keywords, author }) => {
       <Header />
 
       {children}
+
+      <ShowOnLogin>
+        <SupportEngine />
+      </ShowOnLogin>
       <Footer />
     </>
   );

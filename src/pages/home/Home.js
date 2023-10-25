@@ -11,7 +11,6 @@ import ShowOnLogin, {
 import mentalIMG from "../../assets/images/mentalhealth.svg";
 import healthIMG from "../../assets/images/medicine.svg";
 import knowIMG from "../../assets/images/knowledge.svg";
-import talkIMG from "../../assets/images/talk.svg";
 import heroIMG from "../../assets/images/hero_img.svg";
 
 const Home = () => {
@@ -54,10 +53,10 @@ const Home = () => {
                   </div>
                 </ShowOnLogout>
                 <ShowOnLogin>
-                  <Link to="/homepage">
+                  <Link to="/guide">
                     <button className="flex items-center mt-8 px-8 p-2 gap-2 shadow-lg rounded-lg text-md font-[600] bg-yellow-400 hover:bg-softColor transition">
                       <i class="ri-search-2-line" />
-                      Find Mental Health Support today
+                      Learn about mental health
                     </button>
                   </Link>
                 </ShowOnLogin>
@@ -130,7 +129,7 @@ const Home = () => {
 
                   <Link
                     className="w-[44px] h-[44px] rounded-full border border-solid mt-[30px] mx-auto flex items-center justify-center group hover:bg-softColor hover:border-none hover:animate-ping"
-                    to="/homepage"
+                    to="/find-a-mental-health-support"
                   >
                     <i class="ri-arrow-right-line" />
                   </Link>
@@ -165,31 +164,135 @@ const Home = () => {
         </section>
         {/* How Can we support you page end */}
 
+        {/* How it Works */}
+        <section>
+          <div className="container">
+            {/* Container */}
+            <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+              {/* Heading Div */}
+              <div
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                className="mx-auto w-full max-w-3xl m-4"
+              >
+                {/* Component */}
+                <div className="text-center">
+                  <p className="uppercase text-brightColor">3 easy steps</p>
+                  <h2 className="text-3xl font-semibold md:text-5xl">
+                    How it{" "}
+                    <span className="bg-cover bg-center bg-no-repeat text-brightColor">
+                      works
+                    </span>
+                  </h2>
+                </div>
+              </div>
+              {/* How it Works Div */}
+              <div
+                data-aos="zoom-in-up"
+                data-aos-duration="1500"
+                className="mx-auto grid grid-cols-1 gap-4 sm:justify-items-stretch md:grid-cols-3 lg:gap-8"
+              >
+                {/* How it Works Item */}
+                <div className="relative flex flex-col items-center gap-4 p-8 text-center">
+                  <div className="mb-5 flex max-w-[400px] flex-col items-center justify-center rounded-xl border border-solid border-black bg-white px-8 py-5 [box-shadow:rgb(0,_0,_0)_4px_4px] md:mb-6 lg:mb-8">
+                    <p className="text-xl font-bold">1</p>
+                  </div>
+                  <p className="mb-2 text-xl font-semibold">
+                    Check your mental health
+                  </p>
+                  <p className="text-sm text-[#636262]">
+                    Check your mental health status by answering (5) simple
+                    questions
+                  </p>
+                  <img
+                    src="https://assets.website-files.com/63904f663019b0d8edf8d57c/639833af1925275b6f0b43e1_Vector%2032.svg"
+                    alt
+                    className="absolute bottom-[-33%] left-0 right-auto top-auto -z-10 hidden w-96 md:bottom-auto md:left-[136px] md:right-[-50%] md:top-[18%] md:inline-block lg:left-auto"
+                  />
+                </div>
+                {/* How it Works Item */}
+                <div className="relative flex flex-col items-center gap-4 p-8 text-center">
+                  <div className="mb-5 flex max-w-[400px] flex-col items-center justify-center rounded-xl border border-solid border-black bg-white px-8 py-5 [box-shadow:rgb(0,_0,_0)_4px_4px] md:mb-6 lg:mb-8">
+                    <p className="text-xl font-bold">2</p>
+                  </div>
+                  <p className="mb-2 text-xl font-semibold">
+                    Contact the support
+                  </p>
+                  <p className="text-sm text-[#636262]">
+                    By clicking the button below you can ask questions about
+                    your mental health status
+                  </p>
+                  <img
+                    src="https://assets.website-files.com/63904f663019b0d8edf8d57c/639834731925279c5e0b4ee5_Vector%2033.svg"
+                    alt
+                    className="absolute bottom-[-33%] left-0 right-auto top-auto -z-10 hidden w-96 md:bottom-auto md:left-[136px] md:right-[-50%] md:top-[8%] md:inline-block lg:left-auto"
+                  />
+                </div>
+                {/* How it Works Item */}
+                <div className="relative flex flex-col items-center gap-4 p-8 text-center">
+                  <div className="mb-5 flex max-w-[400px] flex-col items-center justify-center rounded-xl border border-solid border-black bg-white px-8 py-5 [box-shadow:rgb(0,_0,_0)_4px_4px] md:mb-6 lg:mb-8">
+                    <p className="text-xl font-bold">3</p>
+                  </div>
+                  <p className="mb-2 text-xl font-semibold">Done!</p>
+                  <p className="text-sm text-[#636262]">
+                    Hopefully this can help you to be better!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* How it works End */}
+
         {/* Reach Out */}
         <section>
           <div className="container">
-            <div
-              data-aos="flip-right"
-              data-aos-duration="1500"
-              className="flex items-center justify-between flex-col lg:flex-row py-32"
-            >
-              <div className="xl:w-[670px]">
-                <h2 className="text-3xl font-[700] text-brightColor">
-                  Reach out to <br />
-                  <span className="text-black">our counselor today</span>
-                </h2>
-
-                <Link to="/">
-                  <button className="flex items-center mt-8 px-8 p-2 gap-2 shadow-lg rounded-lg text-md font-[600] bg-brightColor hover:bg-softColor transition">
-                    <i className="ri-chat-4-line" />
-                    Chat the counselor
-                  </button>
-                </Link>
-              </div>
-
-              {/* img */}
-              <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
-                <img alt="none" className="swing" src={talkIMG} />
+            <div className="px-5 py-16 md:px-10 md:py-24 lg:py-32">
+              <div
+                data-aos="flip-right"
+                data-aos-duration="1500"
+                className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center text-center"
+              >
+                <div className="mb-6 max-w-[720px] md:mb-10 lg:mb-12 lg:max-w-[800px]">
+                  <h1 className="mb-4 text-4xl font-bold md:text-6xl">
+                    Join the Interact Me community
+                  </h1>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <a
+                    href="#"
+                    className="flex max-w-full flex-row items-center justify-start gap-4 rounded-full bg-white border px-8 py-5 font-bold text-blackColor transition hover:text-brightColor"
+                  >
+                    <img
+                      src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1d17434dca744efe218e_Vector.png"
+                      alt="Twitter Icon"
+                      className="inline-block w-6"
+                    />
+                    <p className>Twitter</p>
+                  </a>
+                  <a
+                    href="#"
+                    className="flex max-w-full flex-row items-center justify-start gap-4 rounded-full bg-white border px-8 py-5 font-bold text-blackColor transition hover:text-brightColor"
+                  >
+                    <img
+                      src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1d1739fa5520329c82de_Vector-1.png"
+                      alt="Discord Icon"
+                      className="inline-block w-6"
+                    />
+                    <p className>Discord</p>
+                  </a>
+                  <a
+                    href="#"
+                    className="flex max-w-full flex-row items-center justify-start gap-4 rounded-full bg-white border px-8 py-5 font-bold text-blackColor transition hover:text-brightColor"
+                  >
+                    <img
+                      src="https://assets.website-files.com/647e296b89c00bcfafccf696/647f1d0dc3a358f7fc440fb0_Vector-2.png"
+                      alt="Snapchat Icon"
+                      className="inline-block w-6"
+                    />
+                    <p className>Snapchat</p>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

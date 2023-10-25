@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import QuestionPanel from "./QuestionPanel";
 
 // redux import
@@ -24,25 +25,34 @@ const Quiz = () => {
     console.log(result);
   });
 
+  const totalPoints = queue.length * 10;
+
   // function button next handler
   function onNext() {
-    console.log("On Next click");
-
     if (trace < queue.length) {
-      // Move to the next question
-      dispatch(MoveNextQuestion());
+      if (check !== undefined) {
+        // Move to the next question
+        dispatch(MoveNextQuestion());
 
-      // insert a new result in the array
-      if (result.length <= trace) {
-        dispatch(PushAnswer(check));
+        // insert a new result in the array
+        if (result.length <= trace) {
+          dispatch(PushAnswer(check));
+        }
+
+        // reset value of check variable
+        setChecked(undefined);
+      } else {
+        // Notify the user that they must select an answer before moving to the next question
+        toast.error("Please select an option", {
+          autoClose: 2000,
+          position: "bottom-right",
+        });
       }
     }
   }
 
   // function button previous handler
   function onPrev() {
-    console.log("On Previous click");
-
     if (trace > 0) {
       // Move to the previous question
       dispatch(MovePreviousQuestion());

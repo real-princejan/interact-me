@@ -30,4 +30,5 @@ const resultSlice = createSlice({
 
 export const { setUserId, pushResult, resetResultAction, updateResultAction } =
   resultSlice.actions; // Updated the action name here
+
 export default resultSlice.reducer;

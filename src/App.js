@@ -24,6 +24,8 @@ import Quiz from "./components/Activities/Quiz";
 import Contact from "./components/Contact/Contact";
 import Guide from "./components/Guides/Guide";
 import Result from "./components/Activities/Result";
+import FindSupport from "./components/Support/FindSupport";
+import SupportAdmin from "./Chat/SupportAdmin/SupportAdmin";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -47,7 +49,7 @@ function App() {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/" element={<ResetPassword />} />
 
-            <Route path="" element={<PrivateRoute />}>
+            <Route path="/" element={<PrivateRoute />}>
               <Route path="/profile" element={<Profile />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
@@ -56,7 +58,13 @@ function App() {
               <Route path="/question" element={<Question />} />
               <Route path="/result" element={<Result />} />
               <Route path="/guide" element={<Guide />} />
+              <Route
+                path="/find-a-mental-health-support"
+                element={<FindSupport />}
+              />
             </Route>
+
+            <Route path="/support" element={<SupportAdmin />} />
           </Routes>
         </Router>
       </div>

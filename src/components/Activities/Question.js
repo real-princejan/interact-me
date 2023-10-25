@@ -31,7 +31,8 @@ const Question = () => {
                 <h2 className="font-bold text-3xl md:text-5xl">How it works</h2>
                 <div className="mx-auto mt-4 max-w-[528px] mb-5 md:mb-6 lg:mb-8">
                   <p className="text-[#636262] max-[479px]:text-sm">
-                    Lorem ipsum dolor sit ameta
+                    We'll ask you to think about how you've been feeling lately.
+                    You then need to answer 5 questions.
                   </p>
                 </div>
               </div>
@@ -80,7 +81,7 @@ const Question = () => {
                     </div>
                     <div className="ml-4 flex-col flex-initial flex w-auto items-start gap-2">
                       <h5 className="text-lg opacity-80 font-bold">
-                        Each question has four (4) options, you can only choose
+                        Each question has two (2) options, you can only choose
                         one.
                       </h5>
                     </div>

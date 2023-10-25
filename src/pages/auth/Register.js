@@ -114,7 +114,7 @@ const Register = () => {
 
   useEffect(() => {
     if (isSuccess && isLoggedIn) {
-      navigate("/login");
+      navigate("/");
     }
 
     dispatch(RESET_AUTH());
